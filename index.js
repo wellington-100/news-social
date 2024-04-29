@@ -37,6 +37,8 @@ const ratingMap = [
 console.clear()
 console.log("NEWS\n")
 //HW1: format rating ---> 5.0
+
+// TODO: change to forEach()
 for(let i=0; i<news.length; i++){
     // let stars
     let rating = Math.round(news[i].rating)
