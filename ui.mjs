@@ -14,7 +14,6 @@ const renderNews = (news) => {
     console.log("NEWS\n")
     //HW1: format rating ---> 5.0
 
-    // TODO: change to forEach()
     news.forEach(newsItem => {
         let rating = Math.round(newsItem.rating)
 

@@ -1,0 +1,22 @@
+[
+    {
+        "title": "News One",
+        "publishedOn": "2024-04-24",
+        "rating": 4.5,
+        "author": {
+            "name": "Peter Parker",
+            "email": "pp@email.com",
+            "password": "123"
+        }
+    },
+    {
+        "title": "News Two",
+        "publishedOn": "2024-04-23",
+        "rating": 5.0,
+        "author": {
+            "name": "TonyStark",
+            "email": "ts@email.com",
+            "password": "456"
+        }
+    }
+]
