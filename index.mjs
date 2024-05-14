@@ -1,3 +1,4 @@
+
 // user imputs 3 rating values
 // the script calculates the avg rating
 // outputs the avg
@@ -15,9 +16,12 @@ io.question('enter the values separated by space: ', answer => {
     // HW2: calculate this, using standard for()
     // HW3: calculate this, using Array.reduce()
     // HW4: make the calculator flexible(many/more values..)
+    let values = 0
+    for (let i = 0; i < rating.length; i++) {
+        values += rating[i]
+    }
+    let avgValue = values / rating.length
 
-    let avgValue = rating.reduce((total, value) => total + value, 0) / rating.length
-    
     // HW1: only 1 digit...
     let avgRating = avgValue.toFixed(1)
 
