@@ -1,13 +1,13 @@
-import { writeFile } from 'node:fs/promises'
+import { readFile } from 'node:fs/promises'
 
-async function save(data) {
-    const jsonData = JSON.stringify(data, null, 2)
+async function load() {
     try {
-        await writeFile('./data/rating.json', jsonData);
-        console.log('Succes');
+        const jsonRating = await readFile('./data/rating.json')
+        const data = JSON.parse(jsonRating)
+        return data
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Failed to load JSON data:', error)
     }
 }
 
-export default save
+export default load
