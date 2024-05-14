@@ -3,6 +3,7 @@
 // outputs the avg
 
 import readline from 'node:readline'
+import save from './storage.mjs'
 
 let io = readline.createInterface({
     input: process.stdin,
@@ -12,16 +13,16 @@ let io = readline.createInterface({
 io.question('enter the values separated by space: ', answer => {
     let rating = answer.split(' ').map(value => parseFloat(value))
 
-    // HW2: calculate this, using standard for()
-    // HW3: calculate this, using Array.reduce()
-    // HW4: make the calculator flexible(many/more values..)
-
     let avgValue = rating.reduce((total, value) => total + value, 0) / rating.length
 
-    // HW1: only 1 digit...
     let avgRating = avgValue.toFixed(1)
 
-    console.log('the average rating is: ', avgRating)
+    let jsonRating = [
+        { average: `${avgRating}`}
+    ]
+    
+    save(jsonRating)
+    
     io.close()
 })
 
