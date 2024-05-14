@@ -9,12 +9,17 @@ let io = readline.createInterface({
     output: process.stdout
 })
 
-io.question('enter 3 rating values separated by space: ', answer => {
+io.question('enter the values separated by space: ', answer => {
     let rating = answer.split(' ').map(value => parseFloat(value))
 
     // HW2: calculate this, using standard for()
     // HW3: calculate this, using Array.reduce()
-    let avgValue = (rating[0] + rating[1] + rating[2]) / 3
+    // HW4: make the calculator flexible(many/more values..)
+    let values = 0
+    for (let i = 0; i < rating.length; i++){
+        values += rating[1]
+    }
+    let avgValue = values / rating.length
 
     // HW1: only 1 digit...
     let avgRating = avgValue.toFixed(1)
@@ -22,3 +27,6 @@ io.question('enter 3 rating values separated by space: ', answer => {
     console.log('the average rating is: ', avgRating)
     io.close()
 })
+
+//HW5*: in a separate branch make an app using the json storage(save in file)
+//HW6*: in a separate branch make an app using the json storage(load from file)
